@@ -12,9 +12,10 @@ import { ToastProvider } from "./context/toastContext";
 import Login from "./pages/login";
 import SignUp from "./pages/signup";
 import Home from "./pages/Home.jsx";
+import SearchPage from "./pages/SearchPage.jsx";
 import { Profile } from "./pages/profile";
-import ProtectedRoute from "./components/ProtectedRoute";
 
+import ProtectedRoute from "./components/ProtectedRoute";
 import PlayerBar from "./components/ui/PlayerBar";
 import Topsong_api from "./components/Hooks/Topsong_api";
 
@@ -39,6 +40,15 @@ function App() {
                   element={
                     <ProtectedRoute>
                       <Home />
+                    </ProtectedRoute>
+                  }
+                />
+
+                <Route
+                  path="/search"
+                  element={
+                    <ProtectedRoute>
+                      <SearchPage />
                     </ProtectedRoute>
                   }
                 />
