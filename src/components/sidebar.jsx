@@ -1,5 +1,5 @@
 import React from "react";
-import { useNavigate, useLocation } from "react-router-dom";
+import { useNavigate, useLocation, NavLink } from "react-router-dom";
 import { Home, Search, Library, Heart, Plus, LogOut } from "lucide-react";
 import { useAuth } from "../context/FirebaseContext";
 import { useToast } from "../context/toastContext";
@@ -33,30 +33,33 @@ export const Sidebar = () => {
   return (
     <>
       <div className=" fixed left-0 top-0 w-64 bg-card border-r border-border h-screen flex flex-col">
-        <div className="p-6">
-          <div className="flex items-center gap-2">
-            <div className="text-neon-green">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="32"
-                height="32"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              >
-                <path d="M9 18V5l12-2v13"></path>
-                <circle cx="6" cy="18" r="3"></circle>
-                <circle cx="18" cy="16" r="3"></circle>
-              </svg>
+        <NavLink to="/home">
+          <div className="p-6">
+            <div className="flex items-center gap-2">
+              <div className="text-neon-green">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="32"
+                  height="32"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
+                  <path d="M9 18V5l12-2v13"></path>
+                  <circle cx="6" cy="18" r="3"></circle>
+                  <circle cx="18" cy="16" r="3"></circle>
+                </svg>
+              </div>
+
+              <span className="text-xl font-bold tracking-tight text-foreground">
+                MusicFlow
+              </span>
             </div>
-            <span className="text-xl font-bold tracking-tight text-foreground">
-              MusicFlow
-            </span>
           </div>
-        </div>
+        </NavLink>
 
         <nav className="px-3 space-y-1">
           {menuItems.map((item) => {
