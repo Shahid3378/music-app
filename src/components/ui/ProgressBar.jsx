@@ -1,11 +1,7 @@
 export default function ProgressBar({
   progress,
   setProgress,
-<<<<<<< HEAD
-  duration, 
-=======
   duration,
->>>>>>> 8cb3f65 (ui changes)
   audioRef,
 }) {
   const formatTime = (time) => {

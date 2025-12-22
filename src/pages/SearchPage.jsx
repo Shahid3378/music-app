@@ -14,11 +14,9 @@ const categories = [
 export default function SearchPage() {
   return (
     <>
-      {/* SAME as Home */}
       <Sidebar />
 
-      <div className="min-h-screen bg-background text-white md:ml-60">
-        {/* Search */}
+      <div className="min-h-screen bg-background text-white p-8 md:ml-64">
         <h1 className="text-xl font-semibold mb-6">Search</h1>
 
         <input
@@ -27,7 +25,6 @@ export default function SearchPage() {
           className="w-full max-w-xl bg-[#1f1f1f] px-4 py-3 rounded-full outline-none text-sm mb-10"
         />
 
-        {/* Browse */}
         <h2 className="text-2xl font-bold mb-6">Browse All</h2>
 
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-10">

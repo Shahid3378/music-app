@@ -14,23 +14,14 @@ export default function PlayerBar() {
   const song = api_data?.data?.[0];
   const duration = Number(song?.duration || 0);
 
-<<<<<<< HEAD
-  
-   useEffect(() => {
-=======
   useEffect(() => {
->>>>>>> 8cb3f65 (ui changes)
     if (!song) return;
 
     const songUrl = song.downloadUrl?.[4]?.url;
     const audio = new Audio(songUrl);
 
     audioRef.current = audio;
-<<<<<<< HEAD
-   
-=======
 
->>>>>>> 8cb3f65 (ui changes)
     const updateProgress = () => {
       setProgress(audio.currentTime);
     };
@@ -43,25 +34,12 @@ export default function PlayerBar() {
     };
   }, [song]);
 
-<<<<<<< HEAD
-  
-  useEffect(() => {
-    if (!audioRef.current) return;
-
-    isPlaying
-      ? audioRef.current.play()
-      : audioRef.current.pause();
-  }, [isPlaying]);
-
-  
-=======
   useEffect(() => {
     if (!audioRef.current) return;
 
     isPlaying ? audioRef.current.play() : audioRef.current.pause();
   }, [isPlaying]);
 
->>>>>>> 8cb3f65 (ui changes)
   useEffect(() => {
     if (audioRef.current) {
       audioRef.current.volume = volume / 100;
@@ -118,15 +96,11 @@ export default function PlayerBar() {
         </div>
 
         <div className="w-1/3 flex justify-end">
-<<<<<<< HEAD
-          <VolumeControl volume={volume} setVolume={setVolume} audioRef={audioRef} />
-=======
           <VolumeControl
             volume={volume}
             setVolume={setVolume}
             audioRef={audioRef}
           />
->>>>>>> 8cb3f65 (ui changes)
         </div>
       </div>
     </div>
