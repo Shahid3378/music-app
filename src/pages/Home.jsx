@@ -1,4 +1,4 @@
-// import { useAuth } from "../context/FirebaseContext";
+import { useAuth } from "../context/FirebaseContext";
 import { Button } from "@/components/shad/button";
 import { LogOut, Music } from "lucide-react";
 import { Sidebar } from "../components/sidebar";
@@ -6,7 +6,7 @@ import PlayerBar from "../components/ui/PlayerBar";
 import Playlist from "../components/playlist";
 
 function Home({ playlists, setPlaylists, showPlaylist, setShowPlaylist }) {
-  // const { user, logout } = useAuth();
+  const { user, logout } = useAuth();
 
   return (
     <div className="relative flex items-center justify-center ">

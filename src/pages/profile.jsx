@@ -48,8 +48,8 @@ export const Profile = ({ playlists, setPlaylists, showPlaylist, setShowPlaylist
       await logout();
       showSuccess("Signed out successfully");
       navigate("/login");
-    } catch (err) {
-      showError("Logout failed", err);
+    } catch (error) {
+      showError("Logout failed", error);
     }
   };
 

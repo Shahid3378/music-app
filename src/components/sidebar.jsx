@@ -1,3 +1,4 @@
+import React from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import { Home, Search, Library, Heart, Plus, LogOut, Music } from "lucide-react";
 import { useAuth } from "../context/FirebaseContext";
@@ -44,21 +45,6 @@ export const Sidebar = ({ playlists = [],onAddPlaylist }) => {
         <div className="p-6">
           <div className="flex items-center gap-2">
             <div className="text-neon-green">
-              {/* <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="32"
-                height="32"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              >
-                <path d="M9 18V5l12-2v13"></path>
-                <circle cx="6" cy="18" r="3"></circle>
-                <circle cx="18" cy="16" r="3"></circle>
-              </svg> */}
               <Music className="w-8 h-8" />
             </div>
             <span className="text-xl font-bold tracking-tight text-foreground">
@@ -95,7 +81,8 @@ export const Sidebar = ({ playlists = [],onAddPlaylist }) => {
             </span>
             <button 
               onClick={onAddPlaylist}
-              className="p-1 hover:bg-neon-green rounded-md transition-colorsfont-medium text-muted-foreground hover:text-foreground">
+              className="p-1 hover:bg-neon-green rounded-md transition-colors font-medium text-muted-foreground hover:text-foreground">
+
               <Plus className="w-4 h-4" />
             </button>
           </div>
@@ -113,7 +100,8 @@ export const Sidebar = ({ playlists = [],onAddPlaylist }) => {
         </div>
 
         <div className="p-4 border-t border-border space-y-2">
-          <div className="flex items-center hover:bg-gray-200 hover:rounded-xl gap-3 px-3 py-2">
+
+          <div className="flex items-center gap-3 px-3 py-2">
             <div className="w-8 h-8 rounded-full bg-neon-green flex items-center justify-center shrink-0">
               <span className="text-black font-bold text-xs uppercase">
                 {user?.email?.charAt(0) || "U"}
@@ -154,6 +142,7 @@ export const Sidebar = ({ playlists = [],onAddPlaylist }) => {
           })}
         </nav>
       </div>
+
     </>
   );
 };

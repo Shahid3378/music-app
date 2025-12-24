@@ -49,7 +49,7 @@ export default function PlayerBar() {
   if (!song) return null;
 
   return (
-    <div className="fixed bottom-0 left-0 right-0 bg-[#111] text-white">
+    <div className="fixed bottom-0 ml-64 left-0 right-0 bg-[#111] text-white">
       <div className="px-6 pt-2">
         <ProgressBar
           progress={progress}
