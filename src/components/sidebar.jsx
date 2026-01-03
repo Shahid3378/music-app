@@ -1,9 +1,10 @@
 import React from "react";
-import { useNavigate, useLocation } from "react-router-dom";
-import { Home, Search, Library, Heart, Plus, LogOut, Music } from "lucide-react";
+import { useNavigate, useLocation, NavLink } from "react-router-dom";
+import { Home, Search, Library, Heart, Plus, LogOut, Music, Users } from "lucide-react";
 import { useAuth } from "../context/FirebaseContext";
 import { useToast } from "../context/toastContext";
 import { Link } from "react-router-dom";
+import Playlist from "./playlist";
 
 export const Sidebar = ({ playlists = [],onAddPlaylist }) => {
   
@@ -81,8 +82,7 @@ export const Sidebar = ({ playlists = [],onAddPlaylist }) => {
             </span>
             <button 
               onClick={onAddPlaylist}
-              className="p-1 hover:bg-neon-green rounded-md transition-colors font-medium text-muted-foreground hover:text-foreground">
-
+              className="p-1 hover:bg-neon-green rounded-md transition-colorsfont-medium text-muted-foreground hover:text-foreground dark:hover:text-black">
               <Plus className="w-4 h-4" />
             </button>
           </div>
@@ -100,8 +100,7 @@ export const Sidebar = ({ playlists = [],onAddPlaylist }) => {
         </div>
 
         <div className="p-4 border-t border-border space-y-2">
-
-          <div className="flex items-center gap-3 dark:hover:bg-neon-green-hover hover:bg-gray-200 rounded-xl px-3 py-2">
+          <div className="flex items-center dark:hover:bg-neon-green-hover hover:bg-gray-200 hover:rounded-xl gap-3 px-3 py-2 h-19">
             <div className="w-8 h-8 rounded-full bg-neon-green flex items-center justify-center shrink-0">
               <span className="text-black font-bold text-xs uppercase">
                 {user?.email?.charAt(0) || "U"}
@@ -142,7 +141,6 @@ export const Sidebar = ({ playlists = [],onAddPlaylist }) => {
           })}
         </nav>
       </div>
-
     </>
   );
 };

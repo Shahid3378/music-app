@@ -15,9 +15,8 @@ import { useTheme } from "../context/ThemeContext";
 import { useToast } from "../context/toastContext";
 import { Sidebar } from "../components/sidebar";
 import { useNavigate } from "react-router-dom";
-import Playlist from "../components/playlist";
 
-export const Profile = ({ playlists, setPlaylists, showPlaylist, setShowPlaylist }) => {
+export const Profile = () => {
   const navigate = useNavigate();
   const { user, logout } = useAuth();
   const { theme, toggleTheme } = useTheme();
@@ -48,24 +47,17 @@ export const Profile = ({ playlists, setPlaylists, showPlaylist, setShowPlaylist
       await logout();
       showSuccess("Signed out successfully");
       navigate("/login");
-    } catch (error) {
-      showError("Logout failed", error);
+    } catch (err) {
+      showError("Logout failed");
     }
   };
 
   return (
     <div className="flex bg-background min-h-screen min-w-full">
-      <Sidebar playlists={playlists} onAddPlaylist={() => setShowPlaylist(true)} />
-
-      {showPlaylist && (
-        <Playlist
-          onClose={() => setShowPlaylist(false)}
-          onCreate={(name) => setPlaylists((prev) => [...prev, name])}
-        />
-      )}
+      <Sidebar />
 
       <motion.div
-        className="flex-1 p-8 pb-32 lg:ml-64 overflow-hidden"
+        className="flex-1 p-8 pb-32 md:ml-64 overflow-hidden"
         initial="hidden"
         animate="visible"
         variants={containerVariants}
